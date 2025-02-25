@@ -8,7 +8,7 @@ CORS(app)  # Enable CORS for all routes
 flight_data = {
     "AI101": "10:30 AM",
     "BA202": "2:15 PM",
-    "DL303": "6:45 PM",
+    "DL303": "6:34 PM",
 }
 
 @app.route('/')
