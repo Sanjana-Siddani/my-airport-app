@@ -1,20 +1,27 @@
 {
-    "files": [],
-    "references": [
-      { "path": "./tsconfig.app.json" },
-      { "path": "./tsconfig.node.json" }
-    ],
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "@/*": ["./src/*"]
-      },
-      "noImplicitAny": false,
-      "noUnusedParameters": false,
-      "skipLibCheck": true,
-      "allowJs": true,
-      "noUnusedLocals": false,
-      "strictNullChecks": false
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,              // ✅ FIX for default React import
+    "allowSyntheticDefaultImports": true, // ✅ Also helps with React
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",                   // ✅ FIX for JSX usage
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
     }
-  }
-  
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
