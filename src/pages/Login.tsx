@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useUserAuth } from '@/hooks/useUserAuth';
+import { UserIcon } from 'lucide-react';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -42,11 +43,11 @@ const Login = () => {
         email,
         password,
         name: isSignUp ? name : undefined,
-        isSignUp
+        isSignUp,
+        role: 'passenger'
       });
 
       if (success) {
-        // Success notification is now handled in the useUserAuth hook
         navigate('/');
       } else {
         toast.error(isSignUp ? "Failed to create account. Email may already be in use." : "Invalid credentials. Please check your email and try again.");
@@ -68,7 +69,9 @@ const Login = () => {
               <span className="text-white font-bold text-xl">SH</span>
             </div>
           </div>
-          <CardTitle className="text-2xl text-center">{isSignUp ? "Create Account" : "Sign in to SkyHub"}</CardTitle>
+          <CardTitle className="text-2xl text-center">
+            {isSignUp ? "Create Account" : "Sign in to SkyHub"}
+          </CardTitle>
           <CardDescription className="text-center">
             {isSignUp ? "Create a new account to use SkyHub" : "Enter your credentials to access your account"}
           </CardDescription>
